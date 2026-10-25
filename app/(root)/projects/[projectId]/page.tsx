@@ -5,7 +5,6 @@ import { redirect } from "next/navigation";
 import { Icons } from "@/components/common/icons";
 import ProjectDescription from "@/components/projects/project-description";
 import { buttonVariants } from "@/components/ui/button";
-import ChipContainer from "@/components/ui/chip-container";
 import CustomTooltip from "@/components/ui/custom-tooltip";
 import { Projects } from "@/config/projects";
 import { siteConfig } from "@/config/site";
@@ -42,7 +41,7 @@ export default async function Project({ params }: ProjectPageProps) {
           dateTime={Date.now().toString()}
           className="block text-sm text-muted-foreground"
         >
-          {formatDateFromObj(project.startDate)}
+          {formatDateFromObj(project.endDate)}
         </time>
         <h1 className="flex items-center justify-between mt-2 font-heading text-4xl leading-tight lg:text-5xl">
           {project.companyName}
@@ -63,7 +62,7 @@ export default async function Project({ params }: ProjectPageProps) {
             )}
           </div>
         </h1>
-        <ChipContainer textArr={project.category} />
+
         <div className="mt-4 flex space-x-4">
           <Link
             href={siteConfig.links.github}
@@ -98,15 +97,14 @@ export default async function Project({ params }: ProjectPageProps) {
 
       <div className="mb-7 ">
         <h2 className="inline-block font-heading text-3xl leading-tight lg:text-3xl mb-2">
-          Tech Stack
+          Placement
         </h2>
-        <ChipContainer textArr={project.techStack} />
       </div>
 
       <div className="mb-7 ">
-        <h2 className="inline-block font-heading text-3xl leading-tight lg:text-3xl mb-2">
+        {/* <h2 className="inline-block font-heading text-3xl leading-tight lg:text-3xl mb-2">
           Description
-        </h2>
+        </h2> */}
         {/* {<project.descriptionComponent />} */}
         <ProjectDescription
           paragraphs={project.descriptionDetails.paragraphs}
@@ -116,7 +114,7 @@ export default async function Project({ params }: ProjectPageProps) {
 
       <div className="mb-7 ">
         <h2 className="inline-block font-heading text-3xl leading-tight lg:text-3xl mb-5">
-          Page Info
+          UNITS
         </h2>
         {project.pagesInfoArr.map((page, ind) => (
           <div key={ind}>
@@ -125,7 +123,7 @@ export default async function Project({ params }: ProjectPageProps) {
             </h3>
             <div>
               <p>{page.description}</p>
-              {page.imgArr.map((img, ind) => (
+              {/* {page.imgArr.map((img, ind) => (
                 <Image
                   src={img}
                   key={ind}
@@ -135,7 +133,7 @@ export default async function Project({ params }: ProjectPageProps) {
                   className="my-4 rounded-md border bg-muted transition-colors"
                   priority
                 />
-              ))}
+              ))} */}
             </div>
           </div>
         ))}
@@ -148,7 +146,7 @@ export default async function Project({ params }: ProjectPageProps) {
           className={cn(buttonVariants({ variant: "ghost" }))}
         >
           <Icons.chevronLeft className="mr-2 h-4 w-4" />
-          All Projects
+          Back
         </Link>
       </div>
     </article>

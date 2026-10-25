@@ -25,6 +25,7 @@ export interface ProjectInterface {
   companyLogoImg: any;
   descriptionDetails: DescriptionDetailsInterface;
   pagesInfoArr: PagesInfoInterface[];
+  hour: string;
 }
 
 export const Projects: ProjectInterface[] = [
@@ -35,70 +36,57 @@ export const Projects: ProjectInterface[] = [
     category: ["Web Dev", "UI/UX"],
 
     shortDescription:
-      "Completed a Gastrointestinal and Surgical clinical placement, gaining hands-on experience in patient assessment, medication administration, clinical documentation, multidisciplinary collaboration, and patient-centred care.",
+      "Completed two supervised clinical nursing placements at Gold Coast University Hospital over six weeks, from 6 July to 14 August 2026. Gained experience in gastrointestinal and surgical nursing, chronic health and disability care, patient assessment, clinical skills, documentation, and patient-centred care.",
 
     websiteLink: "",
     githubLink: "",
 
     techStack: ["HTML 5", "CSS 3", "Javascript"],
 
-    startDate: new Date("2026-07-21"),
+    startDate: new Date("2026-07-06"),
     endDate: new Date("2026-08-14"),
 
-    companyLogoImg: "/projects/gcuh/logo.png",
+    companyLogoImg: "/projects/gcuh/building.png",
 
     pagesInfoArr: [
       {
-        title: "Gastrointestinal & Surgical Placement",
+        title: "Health Assessment Across the Lifespan | NURS5012 |",
         description:
-          "Clinical placement experience within a fast-paced acute care environment at Gold Coast University Hospital.",
-        imgArr: ["/projects/gcuh/placement-1.png"],
-      },
-      {
-        title: "Clinical Skill Development",
-        description:
-          "Developed essential nursing skills through supervised clinical practice and multidisciplinary teamwork.",
+          " Completed a supervised placement in the Gastrointestinal and Surgical Unit. Developed experience in patient assessment, vital signs monitoring, blood glucose monitoring, medication administration under supervision, clinical documentation, infection prevention and control, and ISBAR handovers. Worked alongside Registered Nurses to support safe and patient-centred care.",
+
         imgArr: [
           "/projects/gcuh/placement-2.png",
           "/projects/gcuh/placement-3.png",
         ],
       },
       {
-        title: "Patient-Centred Care",
+        title: "Chronic Health and Disability Across the Lifespan | NURS5011 |",
         description:
-          "Supported safe, evidence-based care while building confidence in communication, documentation, and clinical decision-making.",
-        imgArr: ["/projects/gcuh/placement-4.png"],
+          "Completed a second supervised placement focused on chronic health and disability care. Developed understanding of holistic assessment, individual healthcare needs, patient dignity, effective communication, and person-centred support. Further strengthened teamwork, clinical reasoning, and professional communication while working with Registered Nurses and the wider healthcare team.",
+
+        imgArr: ["/projects/gcuh/placement-1.png"],
       },
     ],
-
+    hour: "240 hr ",
     descriptionDetails: {
       paragraphs: [
-        "Completed a clinical placement in the Gastrointestinal and Surgical Unit at Gold Coast University Hospital, caring for patients with a wide range of acute and complex health conditions.",
-
-        "Worked alongside Registered Nurses and multidisciplinary healthcare teams to deliver safe, evidence-based, and patient-centred care in a dynamic hospital environment.",
-
-        "Applied theoretical nursing knowledge in real-world clinical settings through patient assessments, medication administration, clinical documentation, blood glucose monitoring, and structured ISBAR handovers.",
-
-        "Gained valuable exposure to gastrointestinal and surgical nursing, strengthening clinical reasoning, communication, teamwork, and professional practice skills.",
-
-        "This placement further developed my confidence, adaptability, and commitment to providing compassionate and high-quality healthcare while continuing my journey toward becoming a Registered Nurse.",
+        "Completed two supervised clinical placements at Gold Coast University Hospital over six weeks, from 6 July to 14 August 2026, as part of the Master of Nursing (Graduate Entry) at Southern Cross University.",
       ],
 
       bullets: [
-        "Patient assessment and monitoring",
-        "Medication administration",
-        "Clinical documentation",
-        "ISBAR handovers",
+        "Patient assessment and vital signs monitoring",
+        "Gastrointestinal and surgical nursing",
+        "Chronic health and disability care",
+        "Medication administration under RN supervision",
         "Blood glucose monitoring",
+        "Clinical documentation and record keeping",
+        "ISBAR handovers and clinical communication",
         "Infection prevention and control",
-        "Patient-centred care",
-        "Clinical reasoning and decision-making",
+        "Patient-centred and holistic care",
+        "Clinical reasoning and prioritisation",
         "Multidisciplinary collaboration",
-        "Professional communication",
-        "Gastrointestinal nursing care",
-        "Surgical nursing care",
-        "Healthcare teamwork",
-        "Evidence-based practice",
+        "Time management and professional accountability",
+        "Reflective practice and ongoing clinical development",
       ],
     },
   },

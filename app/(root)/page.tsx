@@ -3,46 +3,43 @@ import Image from "next/image";
 import Link from "next/link";
 import Script from "next/script";
 
-import BlogCard from "@/components/blogs/blog-card";
+import CertificateCard from "@/components/certificates/certificate-card";
 import { AnimatedSection } from "@/components/common/animated-section";
 import { AnimatedText } from "@/components/common/animated-text";
 import { ClientPageWrapper } from "@/components/common/client-page-wrapper";
 import { Icons } from "@/components/common/icons";
-import ContributionCard from "@/components/contributions/contribution-card";
+import EducationCard from "@/components/education/education-card";
 import ExperienceCard from "@/components/experience/experience-card";
 import ProjectCard from "@/components/projects/project-card";
 import SkillsCard from "@/components/skills/skills-card";
 import { Button, buttonVariants } from "@/components/ui/button";
-import { featuredContributions } from "@/config/contributions";
+import { certificates } from "@/config/certificates";
+import { education } from "@/config/education";
 import { experiences } from "@/config/experience";
 import { pagesConfig } from "@/config/pages";
 import { featuredProjects } from "@/config/projects";
 import { siteConfig } from "@/config/site";
 import { featuredSkills } from "@/config/skills";
-import { getFeaturedBlogs } from "@/lib/blogs";
 import { cn } from "@/lib/utils";
 import profileImg from "@/public/profile-img.png";
 
 export const metadata: Metadata = {
-  title: `${pagesConfig.home.metadata.title}`,
+  title: pagesConfig.home.metadata.title,
   description:
-    "Ayush Timalsina - Applied AI Engineer working at the intersection of AI, data, and scalable software systems. Explore my projects, experience, and contributions.",
+    "Ayush Timalsina - Nursing student at Southern Cross University with a background in software engineering and business. Explore my clinical placements, technical projects, professional experience, and journey toward clinical informatics.",
   alternates: {
     canonical: siteConfig.url,
   },
 };
 
 export default function IndexPage() {
-  const featuredBlogs = getFeaturedBlogs();
   // Structured data for personal portfolio
   const personSchema = {
     "@context": "https://schema.org",
     "@type": "Person",
     name: siteConfig.authorName,
     url: siteConfig.url,
-    image: siteConfig.ogImage,
     jobTitle: "Applied AI Engineer",
-    sameAs: [siteConfig.links.github, siteConfig.links.twitter],
   };
 
   // Structured data for website as a software application (template)
@@ -227,72 +224,78 @@ export default function IndexPage() {
       <AnimatedSection
         direction="up"
         className="container space-y-6 bg-muted py-10 my-14"
-        id="contributions"
+        id="education"
       >
         <div className="mx-auto flex max-w-[58rem] flex-col items-center space-y-4 text-center">
           <AnimatedText
             as="h2"
             className="font-heading text-3xl leading-[1.1] sm:text-3xl md:text-6xl"
           >
-            {pagesConfig.contributions.title}
+            {pagesConfig.education.title}
           </AnimatedText>
           <AnimatedText
             as="p"
             delay={0.2}
             className="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7"
           >
-            {pagesConfig.contributions.description}
+            {pagesConfig.education.description}
           </AnimatedText>
         </div>
-        <ContributionCard contributions={featuredContributions} />
+        <EducationCard education={education} />
         <AnimatedText delay={0.4} className="flex justify-center">
-          <Link href="/contributions">
+          <Link href="/education">
             <Button variant={"outline"} className="rounded-xl">
               <Icons.chevronDown className="mr-2 h-4 w-4" /> View All
             </Button>
           </Link>
         </AnimatedText>
       </AnimatedSection>
+
       <AnimatedSection
         direction="up"
         className="container space-y-6 py-10 my-14"
-        id="blogs"
+        id="certificates"
       >
         <div className="mx-auto flex max-w-[58rem] flex-col items-center space-y-4 text-center">
           <AnimatedText
             as="h2"
             className="font-heading text-3xl leading-[1.1] sm:text-3xl md:text-6xl"
           >
-            {pagesConfig.blogs.title}
+            {pagesConfig.certificates.title}
           </AnimatedText>
+
           <AnimatedText
             as="p"
             delay={0.2}
             className="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7"
           >
-            {pagesConfig.blogs.description}
+            {pagesConfig.certificates.description}
           </AnimatedText>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 w-full items-stretch">
-          {featuredBlogs.map((blog, index) => (
+
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 w-full items-stretch">
+          {certificates.slice(0, 3).map((certificate, index) => (
             <AnimatedSection
-              key={blog.slug}
+              key={certificate.id}
               delay={0.1 * (index + 1)}
               direction="up"
               className="h-full w-full min-w-0"
             >
-              <BlogCard blog={blog} />
+              <CertificateCard certificate={certificate} />
             </AnimatedSection>
           ))}
         </div>
+
         <AnimatedText delay={0.4} className="flex justify-center">
-          <Link href="/blogs">
-            <Button variant={"outline"} className="rounded-xl">
-              <Icons.chevronDown className="mr-2 h-4 w-4" /> View All
+          <Link href="/certificates">
+            <Button variant="outline" className="rounded-xl">
+              <Icons.chevronDown className="mr-2 h-4 w-4" />
+              View All
             </Button>
           </Link>
         </AnimatedText>
       </AnimatedSection>
+
       <AnimatedSection
         direction="up"
         className="container space-y-6 bg-muted py-10 my-14"

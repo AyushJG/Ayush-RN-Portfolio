@@ -21,6 +21,8 @@ export type ValidSkills =
   | "Google Auth"
   | "MySQL"
   | "Java"
+  | "Communication"
+  | "Teamwork"
   | "Databricks"
   | "Python"
   | "Docker"
@@ -80,6 +82,6 @@ export type ValidPages =
   | "projects"
   | "experience"
   | "contact"
-  | "contributions"
   | "resume"
-  | "blogs";
+  | "certificates"
+  | "education";

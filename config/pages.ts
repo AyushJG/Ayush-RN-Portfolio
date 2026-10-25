@@ -47,13 +47,15 @@ export const pagesConfig: PagesConfig = {
       description: "Contact Ayush Timalsina.",
     },
   },
-  contributions: {
-    title: "Contributions",
-    description: "Open-source contributions and community involvement.",
+
+  education: {
+    title: "Education",
+    description:
+      "My academic journey across nursing, information technology, and business.",
     metadata: {
-      title: "Contributions",
+      title: "Education",
       description:
-        "Ayush Timalsina's open-source contributions and community involvement.",
+        "Ayush Timalsina's academic background and educational qualifications.",
     },
   },
   resume: {
@@ -64,14 +66,14 @@ export const pagesConfig: PagesConfig = {
       description: "Ayush Timalsina's resume.",
     },
   },
-  blogs: {
-    title: "Blogs",
+  certificates: {
+    title: "Certificates",
     description:
-      "Thoughts on AI, software engineering, and building in public.",
+      "Professional certifications, clinical training, and continuing professional development.",
     metadata: {
-      title: "Blogs",
+      title: "Certificates",
       description:
-        "Ayush Timalsina's blog — thoughts on AI, software engineering, and building in public.",
+        "Explore my professional certifications and clinical training.",
     },
   },
   experience: {
