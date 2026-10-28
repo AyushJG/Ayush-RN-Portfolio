@@ -13,10 +13,10 @@ export const routesConfig: any = {
       href: "/education",
     },
 
-    {
-      title: "Skills",
-      href: "/skills",
-    },
+    // {
+    //   title: "Skills",
+    //   href: "/skills",
+    // },
     {
       title: "Certificates",
       href: "/certificates",

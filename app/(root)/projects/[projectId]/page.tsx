@@ -9,7 +9,7 @@ import CustomTooltip from "@/components/ui/custom-tooltip";
 import { Projects } from "@/config/projects";
 import { siteConfig } from "@/config/site";
 import { cn, formatDateFromObj } from "@/lib/utils";
-import profileImg from "@/public/profile-img.png";
+import profileImg from "@/public/profile-img.jpg";
 
 interface ProjectPageProps {
   params: Promise<{

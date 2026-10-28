@@ -11,7 +11,6 @@ import { Icons } from "@/components/common/icons";
 import EducationCard from "@/components/education/education-card";
 import ExperienceCard from "@/components/experience/experience-card";
 import ProjectCard from "@/components/projects/project-card";
-import SkillsCard from "@/components/skills/skills-card";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { certificates } from "@/config/certificates";
 import { education } from "@/config/education";
@@ -19,9 +18,8 @@ import { experiences } from "@/config/experience";
 import { pagesConfig } from "@/config/pages";
 import { featuredProjects } from "@/config/projects";
 import { siteConfig } from "@/config/site";
-import { featuredSkills } from "@/config/skills";
 import { cn } from "@/lib/utils";
-import profileImg from "@/public/profile-img.png";
+import profileImg from "@/public/profile-img.jpg";
 
 export const metadata: Metadata = {
   title: pagesConfig.home.metadata.title,
@@ -75,7 +73,7 @@ export default function IndexPage() {
       />
 
       <section className="space-y-6 pb-8 pt-6 mb-0 md:pb-12 md:py-20 lg:py-32 h-screen flex items-center">
-        <div className="container flex max-w-[64rem] flex-col items-center gap-4 text-center -mt-20">
+        <div className="container flex max-w-[64rem] flex-col items-center gap-4 text-center -mt-30">
           <Image
             src={profileImg}
             height={100}
@@ -97,14 +95,14 @@ export default function IndexPage() {
             delay={0.4}
             className="font-heading text-base sm:text-xl md:text-xl lg:text-2xl"
           >
-            Student Registered Nurse | Personal Support Worker
+            Student Registered Nurse | Aspiring to contribute as Informaticist
           </AnimatedText>
           <div className="mt-4 max-w-[42rem] text-center">
             <p className="leading-normal text-muted-foreground text-sm sm:text-base">
-              Hi, I'm a former Software Engineer who is passionate about
-              bridging the gap between healthcare and technology through
-              Clinical Informatics, Digital Health, interoperability, and
-              data-driven patient care.
+              Hi, I'm Ayush! I'm a former Software Engineer now pursuing a
+              career in nursing. I'm passionate about combining healthcare and
+              technology to improve patient care through clinical informatics
+              and digital health innovation.
             </p>
           </div>
 
@@ -143,39 +141,26 @@ export default function IndexPage() {
       <AnimatedSection
         direction="up"
         className="container space-y-6 bg-muted py-10 my-14"
-        id="projects"
+        id="education"
       >
         <div className="mx-auto flex max-w-[58rem] flex-col items-center space-y-4 text-center">
           <AnimatedText
             as="h2"
             className="font-heading text-3xl leading-[1.1] sm:text-3xl md:text-6xl"
           >
-            {pagesConfig.projects.title}
+            {pagesConfig.education.title}
           </AnimatedText>
           <AnimatedText
             as="p"
             delay={0.2}
             className="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7"
           >
-            {pagesConfig.projects.description}
+            {pagesConfig.education.description}
           </AnimatedText>
         </div>
-        <div className="w-full">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 w-full items-stretch">
-            {featuredProjects.map((exp, index) => (
-              <AnimatedSection
-                key={exp.id}
-                delay={0.1 * (index + 1)}
-                direction="up"
-                className="h-full w-full min-w-0"
-              >
-                <ProjectCard project={exp} />
-              </AnimatedSection>
-            ))}
-          </div>
-        </div>
+        <EducationCard education={education} />
         <AnimatedText delay={0.4} className="flex justify-center">
-          <Link href="/projects">
+          <Link href="/education">
             <Button variant={"outline"} className="rounded-xl">
               <Icons.chevronDown className="mr-2 h-4 w-4" /> View All
             </Button>
@@ -215,35 +200,6 @@ export default function IndexPage() {
         </div>
         <AnimatedText delay={0.4} className="flex justify-center">
           <Link href="/experience">
-            <Button variant={"outline"} className="rounded-xl">
-              <Icons.chevronDown className="mr-2 h-4 w-4" /> View All
-            </Button>
-          </Link>
-        </AnimatedText>
-      </AnimatedSection>
-      <AnimatedSection
-        direction="up"
-        className="container space-y-6 bg-muted py-10 my-14"
-        id="education"
-      >
-        <div className="mx-auto flex max-w-[58rem] flex-col items-center space-y-4 text-center">
-          <AnimatedText
-            as="h2"
-            className="font-heading text-3xl leading-[1.1] sm:text-3xl md:text-6xl"
-          >
-            {pagesConfig.education.title}
-          </AnimatedText>
-          <AnimatedText
-            as="p"
-            delay={0.2}
-            className="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7"
-          >
-            {pagesConfig.education.description}
-          </AnimatedText>
-        </div>
-        <EducationCard education={education} />
-        <AnimatedText delay={0.4} className="flex justify-center">
-          <Link href="/education">
             <Button variant={"outline"} className="rounded-xl">
               <Icons.chevronDown className="mr-2 h-4 w-4" /> View All
             </Button>
@@ -295,30 +251,42 @@ export default function IndexPage() {
           </Link>
         </AnimatedText>
       </AnimatedSection>
-
       <AnimatedSection
         direction="up"
         className="container space-y-6 bg-muted py-10 my-14"
-        id="skills"
+        id="projects"
       >
         <div className="mx-auto flex max-w-[58rem] flex-col items-center space-y-4 text-center">
           <AnimatedText
             as="h2"
             className="font-heading text-3xl leading-[1.1] sm:text-3xl md:text-6xl"
           >
-            {pagesConfig.skills.title}
+            {pagesConfig.projects.title}
           </AnimatedText>
           <AnimatedText
             as="p"
             delay={0.2}
             className="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7"
           >
-            {pagesConfig.skills.description}
+            {pagesConfig.projects.description}
           </AnimatedText>
         </div>
-        <SkillsCard skills={featuredSkills} />
+        <div className="w-full">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 w-full items-stretch">
+            {featuredProjects.map((exp, index) => (
+              <AnimatedSection
+                key={exp.id}
+                delay={0.1 * (index + 1)}
+                direction="up"
+                className="h-full w-full min-w-0"
+              >
+                <ProjectCard project={exp} />
+              </AnimatedSection>
+            ))}
+          </div>
+        </div>
         <AnimatedText delay={0.4} className="flex justify-center">
-          <Link href="/skills">
+          <Link href="/projects">
             <Button variant={"outline"} className="rounded-xl">
               <Icons.chevronDown className="mr-2 h-4 w-4" /> View All
             </Button>

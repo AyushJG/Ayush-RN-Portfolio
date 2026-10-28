@@ -41,7 +41,7 @@ export const pagesConfig: PagesConfig = {
   },
   contact: {
     title: "Contact",
-    description: "Let's connect and explore collaborations.",
+    description: "Let's connect.",
     metadata: {
       title: "Contact",
       description: "Contact Ayush Timalsina.",
@@ -69,7 +69,7 @@ export const pagesConfig: PagesConfig = {
   certificates: {
     title: "Certificates",
     description:
-      "Professional certifications, clinical training, and continuing professional development.",
+      "My professional certifications, clinical training, and continuing professional development.",
     metadata: {
       title: "Certificates",
       description:
